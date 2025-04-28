@@ -1,0 +1,17 @@
+{
+  "name": "ish",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "add": "astro add tailwind"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "astro": "^5.7.8",
+    "tailwindcss": "^4.1.4"
+  }
+}

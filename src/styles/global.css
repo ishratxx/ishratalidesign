@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+body {
+    font-family: altivo, sans-serif;
+}
+
+nav {
+    font-family: termina, sans-serif;
+}
+
+footer {
+    font-family: termina, sans-serif;
+}
