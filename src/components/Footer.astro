@@ -1,10 +1,12 @@
 ---
-title: "Footer"
+import { Image } from 'astro:assets';
+import namedLogo from '../assets/namelogo2.svg';
 ---
 
 <footer class="bg-[#f5f2f7] text-center py-10">
-  <h2 class="text-3xl font-bold text-purple-800 mb-2">ishrat ali</h2>
+  <Image src={namedLogo} alt="" class="mx-auto"/>
   <div class="flex justify-center">
+    
     <a
       href="https://linkedin.com"
       target="_blank"
