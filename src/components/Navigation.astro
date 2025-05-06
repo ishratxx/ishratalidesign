@@ -6,15 +6,15 @@ import { Image } from 'astro:assets';
 <header class="bg-[#f5f2f7] p-6">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <div class="text-2xl font-bold text-purple-800">
-        <a href="index.html">
-          <Image src={logo} alt="A bird sitting on a nest of eggs." />
+        <a href="/">
+          <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="A bird sitting on a nest of eggs." class="h-10" />
         </a>
       </div>
       <nav class="space-x-8 text-sm font-medium text-purple-800">
-        <a href="projects.html" class="hover:underline">projects</a>
-        <a href="sidenotes.html" class="hover:underline">side notes</a>
-        <a href="about.html" class="hover:underline">about</a>
-        <a href="contact.html" class="hover:underline">contact</a>
+        <a href="/ishratalidesign/projects.html" class="hover:underline">projects</a>
+        <a href="/ishratalidesign/sidenotes.html" class="hover:underline">side notes</a>
+        <a href="/ishratalidesign/about.html" class="hover:underline">about</a>
+        <a href="/ishratalidesign/contact.html" class="hover:underline">contact</a>
       </nav> 
     </div>
 </header>
