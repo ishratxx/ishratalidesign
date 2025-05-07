@@ -1,6 +1,8 @@
 ---
 title: "Projects"
 import Layout from '../layouts/Layout.astro'
+import { Image } from 'astro:assets';
+import VLMockup1 from '../assets/vitality/VLMockup1.svg';
 description: "A showcase of various projects."
 ---
 
@@ -8,12 +10,16 @@ description: "A showcase of various projects."
   <main class="flex-grow p-10">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
       <!-- Placeholder thumbnails -->
-      <div class="bg-gray-300 h-40"></div>
-      <div class="bg-gray-300 h-40"></div>
-      <div class="bg-gray-300 h-40"></div>
-      <div class="bg-gray-300 h-40"></div>
-      <div class="bg-gray-300 h-40"></div>
-      <div class="bg-gray-300 h-40"></div>
+      <a href="projects/vitality-living">
+        <div class="bg-gray-300 h-80">
+          <Image src={VLMockup1} alt="Logo" class="img-fluid w-100 h-100 object-fit-cover" />
+        </div>
+      </a>
+      <div class="bg-gray-300 h-80"></div>
+      <div class="bg-gray-300 h-80"></div>
+      <div class="bg-gray-300 h-80"></div>
+      <div class="bg-gray-300 h-80"></div>
+      <div class="bg-gray-300 h-80"></div>
     </div>
   </main>
 </Layout>

@@ -1,20 +1,42 @@
 ---
 import logo from '../../public/logo.svg';
 import { Image } from 'astro:assets';
+
 ---
 
-<header class="bg-[#f5f2f7] p-6">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <div class="text-2xl font-bold text-purple-800">
-        <a href="/">
-          <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="A bird sitting on a nest of eggs." class="h-10" />
-        </a>
-      </div>
-      <nav class="space-x-8 text-sm font-medium text-purple-800">
-        <a href="/ishratalidesign/projects" class="hover:underline">projects</a>
-        <a href="/ishratalidesign/sidenotes" class="hover:underline">side notes</a>
-        <a href="/ishratalidesign/about" class="hover:underline">about</a>
-        <a href="/ishratalidesign/contact" class="hover:underline">contact</a>
-      </nav> 
+<header class="py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="text-primary fw-bold fs-4">
+      <a href="/ishratalidesign/" class="text-decoration-none">
+        <Image src={logo} alt="Logo" class="img-fluid" style="height: 40px;" />
+      </a>
     </div>
+    <nav class="d-flex gap-3">
+      <a href="/ishratalidesign/projects" class="h-color text-decoration-none">projects</a>
+      <a href="/ishratalidesign/sidenotes" class="h-color text-decoration-none">side notes</a>
+      <a href="/ishratalidesign/about" class="h-color text-decoration-none">about</a>
+      <a href="/ishratalidesign/contact" class="h-color text-decoration-none">contact</a>
+    </nav>
+  </div>
+  <div class="header-border position-relative start-50 translate-middle-x"></div>
 </header>
+
+<style>
+  header {
+    background-color: #ECE8FC;
+  }
+  .header-border {
+  width: 73%; /* Covers 80% of the width */
+  height: 2px; /* Thickness of the border */
+  background-color: #3E2C77; /* Color of the border */
+  border-radius: 0 0 10px 10px; /* Rounded corners at the ends */
+  bottom: -16px;
+  }
+  .h-color {
+    color: #3E2C77
+  }
+
+  .text-decoration-none:hover {
+    text-decoration: underline;
+  }
+</style>

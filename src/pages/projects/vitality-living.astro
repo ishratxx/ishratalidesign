@@ -1,0 +1,100 @@
+---
+title: "Vitality Living"
+import Layout from '../../layouts/Layout.astro'
+import { Image } from 'astro:assets';
+import VLMockup1 from '../../assets/vitality/VLMockup1.svg';
+import VLMockup2 from '../../assets/vitality/VLMockup2.svg';
+import VLMockup4 from '../../assets/vitality/VLMockup4.svg';
+import VLMockup3 from '../../assets/vitality/VLMockup3.svg';
+import VLMockup5 from '../../assets/vitality/VLMockup5.svg';
+import VitalityIG from '../../assets/vitality/VitalityIG.svg';
+
+
+description: "A showcase of various projects."
+---
+
+<Layout>
+    <main class="flex-grow py-5">
+        <div class="container">
+          <!-- Title Section -->
+          <div class="row">
+            <div class="col-12 text-center mb-4">
+              <h1 class="display-5 mb-4">
+                Vitality <span class="d-block">Living</span>
+              </h1>
+            </div>
+          </div>
+      
+          <!-- Content Section -->
+          <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+              <div class="row">
+                <!-- Repeated Project Type Sections -->
+                <div class="col-12 mb-4">
+                  <p class="fw-bold text-uppercase mb-1">Project Type</p>
+                  <p class="">Brand Identity</p>
+                  <hr class="mt-1 w-75" />
+                </div>
+                <div class="col-12 mb-4">
+                  <p class="fw-bold text-uppercase mb-1">Role</p>
+                  <p class="">Designer | Illustrator</p>
+                  <hr class="mt-1 w-75" />
+                </div>
+                <div class="col-12 mb-4">
+                  <p class="fw-bold text-uppercase mb-1">Tools Used</p>
+                  <p class="">Adobe InDesign | Illustrator | PhotoShop</p>
+                  <hr class="mt-1 w-75" />
+                </div>
+                <div class="col-12 mb-4">
+                  <p class="fw-bold text-uppercase mb-1">Year</p>
+                  <p class="">2025</p>
+                  <hr class="mt-1 w-75" />
+                </div>
+              </div>
+            </div>
+      
+            <!-- Right Column -->
+            <div class="col-md-6 text-start">
+              <p class="">
+                Vitality Living is a conceptual modern wellness magazine dedicated to empowering readers to live healthier, more balanced lives—inside and out. Its latest issue, Glow from Within, is a celebration of radiant skin as a reflection of internal well-being. This special edition takes a holistic approach to skincare, recognizing that true glow begins beneath the surface—through the foods we eat, the thoughts we carry, and the ways we care for our bodies and minds.
+              </p>
+              <p class="">
+                Whether you’re navigating seasonal changes in your skin or looking to simplify your beauty routine, Glow from Within offers approachable advice that feels both calming and empowering. More than just a magazine, Vitality Living is a wellness companion and believes that wellness isn’t one-size-fits-all. This issue is a gentle reminder that glowing skin isn’t about perfection—it’s about balance, rest, nourishment, and self-acceptance. With its clean visuals and warm, encouraging tone, Vitality Living continues to be a space where wellness feels personal, inclusive, and deeply rooted in care.
+              </p>
+            </div>
+          </div>
+
+        <!-- Image Section -->
+        <div class="row mt-4 gap-4">
+            <div class="col-12 text-center">
+              <Image src={VLMockup1} alt="Logo" class="mx-auto" />
+            </div>
+            <div class="row">
+              <div class="col-6 text-center">
+                <Image src={VLMockup2} alt="Logo" class="mx-auto" />
+              </div>
+              <div class="col-6 text-center">
+                <Image src={VLMockup4} alt="Logo" class="mx-auto" />
+              </div>
+            </div>
+            <div class="col-12 text-center">
+                <Image src={VLMockup3} alt="Logo" class="mx-auto" />
+            </div>
+            <div class="col-12 text-center">
+                <Image src={VLMockup5} alt="Logo" class="mx-auto" />
+            </div>
+            <div class="col-12 text-center">
+                <Image src={VitalityIG} alt="Logo" class="mx-auto" />
+            </div>
+          </div>
+      </main>
+</Layout>
+
+<style>
+    h1 {
+        font-family: "Spectral", serif;
+        font-weight: 700;
+        color: #191246;
+    }
+</style>
