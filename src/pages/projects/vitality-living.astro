@@ -2,14 +2,7 @@
 title: "Vitality Living"
 import Layout from '../../layouts/Layout.astro'
 import { Image } from 'astro:assets';
-import VLMockup1 from '../../assets/vitality/VLMockup1.svg';
-import VLMockup2 from '../../assets/vitality/VLMockup2.svg';
-import VLMockup4 from '../../assets/vitality/VLMockup4.svg';
-import VLMockup3 from '../../assets/vitality/VLMockup3.svg';
-import VLMockup5 from '../../assets/vitality/VLMockup5.svg';
-import VitalityIG from '../../assets/vitality/VitalityIG.svg';
-
-
+import * as IMG from '../../assets/vitality/index.js';
 description: "A showcase of various projects."
 ---
 
@@ -68,24 +61,24 @@ description: "A showcase of various projects."
         <!-- Image Section -->
         <div class="row mt-4 gap-4">
             <div class="col-12 text-center">
-              <Image src={VLMockup1} alt="Logo" class="mx-auto" />
+              <Image src={IMG.VLMockup1} alt="Logo" class="mx-auto" />
             </div>
             <div class="row">
               <div class="col-6 text-center">
-                <Image src={VLMockup2} alt="Logo" class="mx-auto" />
+                <Image src={IMG.VLMockup2} alt="Logo" class="mx-auto" />
               </div>
               <div class="col-6 text-center">
-                <Image src={VLMockup4} alt="Logo" class="mx-auto" />
+                <Image src={IMG.VLMockup4} alt="Logo" class="mx-auto" />
               </div>
             </div>
             <div class="col-12 text-center">
-                <Image src={VLMockup3} alt="Logo" class="mx-auto" />
+                <Image src={IMG.VLMockup3} alt="Logo" class="mx-auto" />
             </div>
             <div class="col-12 text-center">
-                <Image src={VLMockup5} alt="Logo" class="mx-auto" />
+                <Image src={IMG.VLMockup5} alt="Logo" class="mx-auto" />
             </div>
             <div class="col-12 text-center">
-                <Image src={VitalityIG} alt="Logo" class="mx-auto w-100 h-100" />
+                <Image src={IMG.VitalityIG} alt="Logo" class="mx-auto w-100 h-100" />
             </div>
           </div>
       </main>
