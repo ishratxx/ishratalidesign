@@ -4,13 +4,12 @@ description: "Welcome to my portfolio! I'm a graphic designer passionate about b
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import polaroidpic from "../assets/polaroidpic.png";
-import SplashScreen from "../components/SplashScreen.astro";
+import SplashScreen from "../components/SplashScreen.jsx";
 
-const showSplashScreen = true; // Set to false if you want to skip the splash screen
 ---
 
 <Layout includeNavBottomBorder={false}>
-  {showSplashScreen && <SplashScreen />}
+  <SplashScreen client:only="react"/>
 
   <!-- Home Content -->
   <div
