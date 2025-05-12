@@ -1,0 +1,36 @@
+---
+// Import the template
+import ProjectTemplate from "../../components/ProjectTemplate.astro";
+import * as IMG from "../../assets/fimh/index.js";
+
+const projectDetails = [
+  { label: "Project Type", value: "Book | Illustration" },
+  { label: "Role", value: "Designer | Illustrator" },
+  { label: "Tools Used", value: "Adobe InDesign | Illustrator | PhotoShop" },
+  { label: "Year", value: "2023–2024" },
+];
+
+const rightColumn = [
+  "Flowers in My Heart is an illustrated book that explores the theme of estrangement through handwritten letters. The book collects four personal letters written by people close to me, each reflecting on their own experiences with distance, disconnection, and the emotional complexities of drifting apart from someone once close. Rather than simply presenting these letters as text, the book transforms them into visual narratives—each one becoming a bold, expressive illustration that brings the emotions within the words to life.",
+  "What makes Flowers in My Heart intimate is the preservation of each letter’s original handwriting. The rawness and individuality of each person’s script adds a human layer to the storytelling, making the emotions feel even more tangible. By pairing visual art with vulnerable words, Flowers in My Heart invites readers to sit with the beauty and ache of what it means to grow apart, while finding softness and strength in the space that remains.",
+];
+
+const images = [
+  { col: 12, src: IMG.FIMHcovermockup, alt: "Mockup 1" },
+  { col: 12, src: IMG.FIMHmockup3, alt: "Mockup 2" },
+  { col: 12, src: IMG.FIMHstickermockup, alt: "Mockup 4" },
+  { col: 12, src: IMG.FIMHmockup2, alt: "Mockup 3" },
+  { col: 12, src: IMG.Chapter1, alt: "winter months" },
+  { col: 12, src: IMG.Chapter2, alt: "longer route" },
+  { col: 12, src: IMG.Chapter3, alt: "lost sibling" },
+  { col: 12, src: IMG.Chapter4, alt: "perfect victim" },
+];
+---
+
+<ProjectTemplate
+  title="Flowers in"
+  description="my heart"
+  projectDetails={projectDetails}
+  rightColumn={rightColumn}
+  images={images}
+/>

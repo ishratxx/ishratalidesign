@@ -1,34 +1,29 @@
 ---
 title: "Footer"
 import { Image } from 'astro:assets';
-import namedlogo from '../assets/namelogo.png';
+import namedlogo from '../assets/namelogo.svg';
 import email from '../assets/email.png';
 import linkedin from '../assets/linkedin.png';
 ---
 
-<footer class="text-center py-4">
+<footer class="text-center py-4 mt-5">
   <div class="container">
-    <!-- Named Logo -->
-    <div class="row">
+    
+    <div class="row gap-3">
+      <!-- Named Logo -->
       <div class="col-12">
-        <Image src={namedlogo} alt="Logo" class="mx-auto named-logo"/>
+        <Image src={namedlogo} alt="Logo" class="mx-auto"/>
       </div>
-    </div>
-
-    <!-- Email and LinkedIn Logos -->
-    <div class="row mt-3">
-      <div class="col-12 d-flex justify-content-center gap-4">
+      <!-- Email and LinkedIn Logos -->
+      <div class="col-12 d-flex justify-content-center align-items-center gap-4">
         <a href="mailto:ishratalidesign@gmail.com">
-          <Image src={email} alt="Email Icon" style="max-width: 3vw; height: auto;" />
+          <Image src={email} alt="Email Icon" style="max-width: 2rem; height: auto;" />
         </a>
-        <a href="https://linkedin.com" target="_blank">
-          <Image src={linkedin} alt="LinkedIn Icon" style="max-width: 3vw; height: auto; padding-top: 3px;" />
+        <a href="https://www.linkedin.com/in/ishrat-ali-/" target="_blank">
+          <Image src={linkedin} alt="LinkedIn Icon" style="max-width: 2rem; height: auto;" />
         </a>
       </div>
-    </div>
-
-    <!-- Footer Text -->
-    <div class="row mt-4">
+      <!-- Footer Text -->
       <div class="col-12">
         <p class="text-center mb-0 copyright">
           &copy; {new Date().getFullYear()} Ishrat Ali
@@ -48,6 +43,6 @@ import linkedin from '../assets/linkedin.png';
 }
 .copyright {
     font-size: 1rem;
-    color: #3E2C77;
+    color: #A55B4B;
 }
 </style>

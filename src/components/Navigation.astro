@@ -2,13 +2,14 @@
 import logo from '../../public/logo.svg';
 import { Image } from 'astro:assets';
 
+const { includeBorder = true } = Astro.props;
 ---
 
 <header class="py-3">
-  <div class="container d-flex justify-content-between align-items-center">
-    <div class="text-primary fw-bold fs-4">
-      <a href="/ishratalidesign/" class="text-decoration-none">
-        <Image src={logo} alt="Logo" class="img-fluid" style="height: 40px;" />
+  <div class={`container d-flex justify-content-between align-items-center px-0 ${includeBorder ? 'nav-with-border' : ''}`}>
+    <div class="text-primary">
+      <a href="/ishratalidesign/" class="text-decoration-none d-flex align-items-start">
+        <Image src={logo} alt="Logo" class="img-fluid pe-5" style="height: 40px;" />
       </a>
     </div>
     <nav class="d-flex gap-3">
@@ -18,25 +19,30 @@ import { Image } from 'astro:assets';
       <a href="/ishratalidesign/contact" class="h-color text-decoration-none">contact</a>
     </nav>
   </div>
-  <div class="header-border position-relative start-50 translate-middle-x"></div>
 </header>
 
 <style>
   header {
     background-color: #ECE8FC;
   }
-  .header-border {
-  width: 73%; /* Covers 80% of the width */
-  height: 2px; /* Thickness of the border */
-  background-color: #3E2C77; /* Color of the border */
-  border-radius: 0 0 10px 10px; /* Rounded corners at the ends */
-  bottom: -16px;
-  }
   .h-color {
     color: #3E2C77
   }
-
-  .text-decoration-none:hover {
-    text-decoration: underline;
+  a:hover {
+    color: #A55B4B;
   }
+
+.container.nav-with-border {
+  position: relative; /* Required for positioning the ::after element */
+}
+
+.container.nav-with-border::after {
+  content: ""; /* Creates the pseudo-element */
+  position: absolute;
+  bottom: -0.938rem; /* Adjust the distance below the nav */
+  left: 0;
+  right: 0;
+  height: 2px; /* Thickness of the border */
+  background-color: #3E2C77; /* Color of the border */
+}
 </style>

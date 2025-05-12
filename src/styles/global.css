@@ -1,15 +1,56 @@
 @import "tailwindcss";
 
 body {
-    font-family: Spectral, sans-serif;
     min-width: 375px;
     color: #191246;
+    font-family: "Fraunces", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "SOFT" 100,
+        "WONK" 0;
+    min-width: 375px;
 }
 
 nav {
-    font-family: termina, sans-serif;
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    /* Semibold weight */
+    font-variation-settings: "SOFT" 100, "WONK" 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    /* Semibold weight */
+    font-variation-settings: "SOFT" 100, "WONK" 0;
+}
+
+.fraunces-bold-100 {
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    /* Bold weight */
+    font-variation-settings: "SOFT" 100, "WONK" 0;
+    /* Adjusts the Fraunces font variation */
+}
+
+.fraunces-bold-italic-120 {
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    /* Bold weight */
+    font-style: italic;
+    /* Italic styling */
+    font-variation-settings: "SOFT" 120, "WONK" 0;
+    /* Adjusts the Fraunces font variation */
 }
 
 footer {
-    font-family: termina, sans-serif;
+    font-family: "Fraunces", sans-serif;
+    color: #A55B4B;
 }
