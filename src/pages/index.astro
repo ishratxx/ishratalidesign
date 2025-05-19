@@ -4,12 +4,12 @@ description: "Welcome to my portfolio! I'm a graphic designer passionate about b
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import polaroidpic from "../assets/polaroidpic.png";
-import SplashScreen from "../components/SplashScreen.jsx";
+import SplashScreen from "../components/SplashScreen.astro";
 
 ---
 
 <Layout includeNavBottomBorder={false}>
-  <SplashScreen client:only="react"/>
+  <SplashScreen/>
 
   <!-- Home Content -->
   <div
@@ -28,7 +28,7 @@ import SplashScreen from "../components/SplashScreen.jsx";
   <div class="container mt-4">
     <div class="row align-items-center t-sp">
       <!-- Left Column -->
-      <div class="col-md-6 text-start">
+      <div class="col-md-6 text-start order-md-1 order-2">
         <p class="lead fraunces-body">
           I am Ishrat Ali, <span class="sp-t"
             >a freelance graphic designer
@@ -43,11 +43,11 @@ import SplashScreen from "../components/SplashScreen.jsx";
         >
       </div>
       <!-- Right Column -->
-      <div class="col-md-6 text-center">
+      <div class="col-md-6 text-center order-md-2 order-1">
         <Image
           src={polaroidpic}
           alt="Polaroid Picture"
-          class="img-fluid mx-auto"
+          class="img-fluid mx-auto polaroid-pic"
         />
       </div>
     </div>
@@ -55,6 +55,10 @@ import SplashScreen from "../components/SplashScreen.jsx";
 </Layout>
 
 <style>
+  .polaroid-pic {
+    height: 40vh;
+    width: auto;
+  }
   .splash-screen {
     position: fixed;
     top: 0;

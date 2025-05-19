@@ -1,0 +1,92 @@
+---
+import logo from '../assets/ialogo.png';
+import { Image } from 'astro:assets';
+---
+
+<div id="splash-screen" class="splash-screen">
+  <div class="logo-container">
+    <Image src={logo} alt="logo" class="logo-image left" />
+    <Image src={logo} alt="logo" class="logo-image right" />
+  </div>
+</div>
+
+<style>
+  .splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: black;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 1s cubic-bezier(0.645, 0.045, 0.355, 1); /* Added visibility transition */
+  }
+
+  .splash-screen.fade-out {
+    opacity: 0;
+    visibility: hidden; /* Added visibility: hidden */
+  }
+
+  .logo-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+
+  .logo-image {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+  }
+
+  .logo-image.left {
+    left: 0;
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    animation: reassemble-left 1.5s forwards;
+  }
+
+  .logo-image.right {
+    right: 0;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    animation: reassemble-right 1.5s forwards;
+  }
+
+  @keyframes reassemble-left {
+    0% {
+      transform: translateX(-100px) rotate(-20deg);
+    }
+    100% {
+      transform: translateX(0) rotate(0);
+    }
+  }
+
+  @keyframes reassemble-right {
+    0% {
+      transform: translateX(100px) rotate(20deg);
+    }
+    100% {
+      transform: translateX(0) rotate(0);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const splashScreen = document.getElementById('splash-screen');
+    if (splashScreen) {
+      setTimeout(() => {
+        splashScreen.classList.add('fade-out');
+        setTimeout(() => {
+          splashScreen.remove();
+        }, 1000);
+      }, 2000);
+    }
+  });
+</script>
