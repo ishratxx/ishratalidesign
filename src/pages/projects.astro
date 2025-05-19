@@ -12,30 +12,78 @@ import threecovers from '../assets/divergent/3covers-min.png';
   <main class="flex-grow p-10">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
       <!-- Placeholder thumbnails -->
-      <a href={`/ishratalidesign/projects/vitality-living`}>
-        <div class="bg-gray-300 h-80">
-          <Image src={VLMockup1} alt="Logo" class="img-fluid w-100 h-100 object-fit-cover" />
+      <a href={`/ishratalidesign/projects/vitality-living`} class="project-link">
+        <div class="relative h-80 overflow-hidden">
+          <Image src={VLMockup1} alt="Vitality Living" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110" />
+          <div class="overlay">
+            <h3 class="title">Vitality Living</h3>
+            <p class="footer">View Project</p>
+          </div>
         </div>
       </a>
 
-      <a href={`/ishratalidesign/projects/flowers-in-my-heart`}>
-        <div class="bg-gray-300 h-80">
-          <Image src={FIMHcovermockup} alt="Logo" class="img-fluid w-100 h-100 object-fit-cover" />
+      <a href={`/ishratalidesign/projects/flowers-in-my-heart`} class="project-link">
+        <div class="relative h-80 overflow-hidden">
+          <Image src={FIMHcovermockup} alt="Flowers in My Heart" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110" />
+          <div class="overlay">
+            <h3 class="title">Flowers in My Heart</h3>
+            <p class="footer">View Project</p>
+          </div>
         </div>
       </a>
 
-      <a href={`/ishratalidesign/projects/jahira`}>
-        <div class="bg-gray-300 h-80">
-          <Image src={jahiramockup1} alt="Logo" class="img-fluid w-100 h-100 object-fit-cover" />
+      <a href={`/ishratalidesign/projects/jahira`} class="project-link">
+        <div class="relative h-80 overflow-hidden">
+          <Image src={jahiramockup1} alt="Jahira" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110" />
+          <div class="overlay">
+            <h3 class="title">Jahira</h3>
+            <p class="footer">View Project</p>
+          </div>
         </div>
       </a>
 
-      <a href={`/ishratalidesign/projects/divergent`}>
-        <div class="bg-gray-300 h-80">
-          <Image src={threecovers} alt="Logo" class="img-fluid w-100 h-100 object-fit-cover" />
+      <a href={`/ishratalidesign/projects/divergent`} class="project-link">
+        <div class="relative h-80 overflow-hidden">
+          <Image src={threecovers} alt="Divergent" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110" />
+          <div class="overlay">
+            <h3 class="title">Divergent</h3>
+            <p class="footer">View Project</p>
+          </div>
         </div>
       </a>
 
     </div>
   </main>
 </Layout>
+
+<style>
+  .project-link .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #c21c7b66; /* Opacity 40% */
+    color: #ece8fc; /* Lavender */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+  }
+
+  .project-link:hover .overlay {
+    opacity: 1;
+  }
+
+  .project-link .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-link .footer {
+    font-size: 1rem;
+  }
+</style>
