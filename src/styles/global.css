@@ -3,6 +3,7 @@
 body {
     min-width: 375px;
     color: #191246;
+    background: #FFFBF8;
     font-family: "Fraunces", serif;
     font-optical-sizing: auto;
     font-weight: 300;
@@ -10,7 +11,6 @@ body {
     font-variation-settings:
         "SOFT" 100,
         "WONK" 0;
-    min-width: 375px;
 }
 
 nav {

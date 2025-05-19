@@ -27,7 +27,7 @@ const { includeBorder = true } = Astro.props;
     width: auto;
   }
   header {
-    background-color: #ECE8FC;
+    background-color: #fffbf8;
   }
   .h-color {
     color: #3E2C77
@@ -36,17 +36,4 @@ const { includeBorder = true } = Astro.props;
     color: #A55B4B;
   }
 
-.container.nav-with-border {
-  position: relative; /* Required for positioning the ::after element */
-}
-
-.container.nav-with-border::after {
-  content: ""; /* Creates the pseudo-element */
-  position: absolute;
-  bottom: -0.938rem; /* Adjust the distance below the nav */
-  left: 0;
-  right: 0;
-  height: 2px; /* Thickness of the border */
-  background-color: #3E2C77; /* Color of the border */
-}
 </style>
