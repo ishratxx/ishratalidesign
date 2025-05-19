@@ -49,9 +49,13 @@ import { Image } from 'astro:assets';
 
       <!-- Image Section -->
       <div class="row mt-4 gy-4">
-        {images.map((imageRow: { col: any; src: any; alt: any; class: any; }) => (
+        {images.map((imageRow: { col: any; src: any; alt: any; class: any; width?: any }) => (
           <div class={`col-${imageRow.col} text-center`}>
-            <Image src={imageRow.src} alt={imageRow.alt} class={imageRow.class || "mx-auto"} />
+            <Image 
+              src={imageRow.src} 
+              alt={imageRow.alt} 
+              class={imageRow.class || "mx-auto" } 
+              style={{ width: imageRow.width ? imageRow.width : 'auto' }}/>
           </div>
         ))}
       </div>
