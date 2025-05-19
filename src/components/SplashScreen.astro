@@ -76,17 +76,3 @@ import { Image } from 'astro:assets';
     }
   }
 </style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const splashScreen = document.getElementById('splash-screen');
-    if (splashScreen) {
-      setTimeout(() => {
-        splashScreen.classList.add('fade-out');
-        setTimeout(() => {
-          splashScreen.remove();
-        }, 1000);
-      }, 2000);
-    }
-  });
-</script>
