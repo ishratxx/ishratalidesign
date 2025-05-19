@@ -14,7 +14,7 @@ import SplashScreen from "../components/SplashScreen.astro";
 
   <!-- Home Content -->
   <div
-    class="container-fluid px-0 d-flex align-items-center justify-content-center bg-3e2c77 cover-ctn"
+    class="container-fluid px-0 d-flex align-items-center justify-content-center bg-3e2c77 cover-ctn fade-in"
   >
     <div class="row">
       <div class="col-12">
@@ -26,7 +26,7 @@ import SplashScreen from "../components/SplashScreen.astro";
     </div>
   </div>
 
-  <div class="container mt-4">
+  <div class="container mt-4 fade-in">
     <div class="row align-items-center t-sp">
       <!-- Left Column -->
       <div class="col-md-6 text-start order-md-1 order-2">
@@ -100,5 +100,15 @@ import SplashScreen from "../components/SplashScreen.astro";
   }
   .cover-ctn {
     height: 50vh;
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 2.9s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
   }
 </style>

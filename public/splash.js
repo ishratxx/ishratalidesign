@@ -5,7 +5,7 @@ document.addEventListener('astro:page-load', () => {
         splashScreen.classList.add('fade-out');
         setTimeout(() => {
           splashScreen.remove();
-        }, 750);
-      }, 1250);
+        }, 1000);
+      }, 1500);
     }
   });
