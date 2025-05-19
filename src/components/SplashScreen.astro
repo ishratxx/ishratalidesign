@@ -24,19 +24,17 @@ import { Image } from 'astro:assets';
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    opacity: 1;
-    transition: opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 1s cubic-bezier(0.645, 0.045, 0.355, 1); /* Added visibility transition */
   }
 
   .splash-screen.fade-out {
-    opacity: 0;
-    visibility: hidden; /* Added visibility: hidden */
+    display: none;
   }
 
   .logo-container {
     position: relative;
     width: 200px;
     height: 200px;
+    animation: popIn 0.8s ease-in-out, popOut 0.8s 2s ease-in-out forwards; /* Apply the popOut animation */
   }
 
   .logo-image {
@@ -73,6 +71,24 @@ import { Image } from 'astro:assets';
     }
     100% {
       transform: translateX(0) rotate(0);
+    }
+  }
+
+  @keyframes popIn {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes popOut {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
     }
   }
 </style>

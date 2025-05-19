@@ -16,10 +16,10 @@ import linkedin from '../assets/linkedin.png';
       </div>
       <!-- Email and LinkedIn Logos -->
       <div class="col-12 d-flex justify-content-center align-items-center gap-4">
-        <a href="mailto:ishratalidesign@gmail.com">
+        <a href="mailto:ishratalidesign@gmail.com" class="social-link">
           <Image src={email} alt="Email Icon" style="max-width: 2rem; height: auto;" />
         </a>
-        <a href="https://www.linkedin.com/in/ishrat-ali-/" target="_blank">
+        <a href="https://www.linkedin.com/in/ishrat-ali-/" target="_blank" class="social-link">
           <Image src={linkedin} alt="LinkedIn Icon" style="max-width: 2rem; height: auto;" />
         </a>
       </div>
@@ -44,5 +44,9 @@ import linkedin from '../assets/linkedin.png';
 .copyright {
     font-size: 1rem;
     color: #A55B4B;
+}
+
+.social-link:hover {
+    filter: invert(24%) sepia(24%) saturate(1946%) hue-rotate(297deg) brightness(88%) contrast(91%);
 }
 </style>
