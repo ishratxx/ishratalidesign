@@ -4,7 +4,8 @@ import Layout from '../layouts/Layout.astro'
 import { Image } from 'astro:assets';
 import VLMockup1 from '../assets/vitality/VLMockup1.svg';
 import FIMHcovermockup from '../assets/fimh/FIMHcovermockup.svg';
-description: "A showcase of various projects."
+import jahiramockup1 from '../assets/jahira/JahiraMockup1.png';
+import threecovers from '../assets/divergent/3covers-min.png';
 ---
 
 <Layout>
@@ -23,10 +24,18 @@ description: "A showcase of various projects."
         </div>
       </a>
 
-      <div class="bg-gray-300 h-80"></div>
-      <div class="bg-gray-300 h-80"></div>
-      <div class="bg-gray-300 h-80"></div>
-      <div class="bg-gray-300 h-80"></div>
+      <a href={`/ishratalidesign/projects/jahira`}>
+        <div class="bg-gray-300 h-80">
+          <Image src={jahiramockup1} alt="Logo" class="img-fluid w-100 h-100 object-fit-cover" />
+        </div>
+      </a>
+
+      <a href={`/ishratalidesign/projects/divergent`}>
+        <div class="bg-gray-300 h-80">
+          <Image src={threecovers} alt="Logo" class="img-fluid w-100 h-100 object-fit-cover" />
+        </div>
+      </a>
+
     </div>
   </main>
 </Layout>

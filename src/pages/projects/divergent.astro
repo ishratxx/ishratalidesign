@@ -1,0 +1,33 @@
+---
+// Import the template
+import ProjectTemplate from "../../components/ProjectTemplate.astro";
+import * as IMG from "../../assets/divergent/index.js";
+
+const projectDetails = [
+  { label: "Project Type", value: "Book | Illustration" },
+  { label: "Role", value: "Designer | Illustrator" },
+  { label: "Tools Used", value: "Adobe InDesign | Illustrator | PhotoShop" },
+  { label: "Year", value: "2025" },
+];
+
+const rightColumn = [
+  "For my reinterpretation of the Divergent series book covers, I took an illustrative approach that re-imagines the dystopian world through a more symbolic lens. Rather than focusing on the original photographic visuals, I leaned into layered compositions and minimal color palettes to evoke the internal struggles and themes woven throughout the story. Each cover centers around a single, abstract emblem that subtly references the corresponding faction while also reflecting the protagonist’s personal evolution. ",
+  "This project allowed me to blend my love for storytelling and illustration, with a strong emphasis on cohesive layout design and visual hierarchy. I designed the typography to feel both bold and restrained, letting the illustrations take center stage while maintaining clarity and legibility. Together, the covers function as a unified set, but each one stands on its own with a distinct mood and visual rhythm. This reimagining of the Divergent series was not only an exercise in visual reinterpretation but also a chance to explore how illustration can breathe new emotional depth into familiar narratives.",
+];
+
+const images = [
+  { col: 12, src: IMG.threecovers, alt: "Mockup 1" },
+  { col: 12, src: IMG.divergentmockup, alt: "Mockup 2" },
+  { col: 12, src: IMG.insurgent, alt: "Mockup 4" },
+  { col: 12, src: IMG.allegiantmockup, alt: "Mockup 3" },
+  { col: 12, src: IMG.openmockup, alt: "winter months" },
+];
+---
+
+<ProjectTemplate
+  title="Divergent"
+  description="Reimagined"
+  projectDetails={projectDetails}
+  rightColumn={rightColumn}
+  images={images}
+/>

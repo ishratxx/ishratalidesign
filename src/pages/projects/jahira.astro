@@ -1,0 +1,33 @@
+---
+// Import the template
+import ProjectTemplate from "../../components/ProjectTemplate.astro";
+import * as IMG from "../../assets/jahira/index.js";
+
+const projectDetails = [
+  { label: "Project Type", value: "Book | Illustration" },
+  { label: "Role", value: "Designer | Illustrator" },
+  { label: "Tools Used", value: "Adobe InDesign | Illustrator | PhotoShop" },
+  { label: "Year", value: "2025" },
+];
+
+const rightColumn = [
+  "Jahira is a conceptual skincare line rooted in confidence, self-expression, and bold beauty. This line believes that every individual deserves to feel confident in their own skin. Jahira is crafted with a passion for enhancing your radiance, using scientifically proven ingredients and innovative formulations to deliver promising results. It contains products that can target any skin concern such as aging, hyperpigmentation, psoriasis, and more. Products, such as the Intensive Hydrating Moisturizer, will lock in moisture and keep your skin and face supple throughout the entire day and night. ",
+  "Designed to stand out on any shelf, Jahira’s packaging features vivid, saturated colors that reflect the energy and individuality of its users. More than just skincare, Jahira represents a fearless approach to self-care—where skin health meets artful design. Each product is thoughtfully formulated and visually striking, merging effective ingredients with a bold aesthetic that invites users to embrace their routine with intention and personality.",
+];
+
+const images = [
+  { col: 12, src: IMG.jahiramockup1, alt: "Mockup 1" },
+  { col: 12, src: IMG.jahiramockup2, alt: "Mockup 2" },
+  { col: 12, src: IMG.jahiracards, alt: "Mockup 4" },
+  { col: 12, src: IMG.jahirabags, alt: "Mockup 3" },
+  { col: 12, src: IMG.jahiragif, alt: "winter months" },
+];
+---
+
+<ProjectTemplate
+  title="Jahira"
+  description="Skincare"
+  projectDetails={projectDetails}
+  rightColumn={rightColumn}
+  images={images}
+/>
