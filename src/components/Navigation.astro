@@ -1,5 +1,5 @@
 ---
-import logo from '../assets/logo.svg';
+import logo from '../assets/ialogo.png';
 import { Image } from 'astro:assets';
 
 const { includeBorder = true } = Astro.props;
@@ -9,7 +9,7 @@ const { includeBorder = true } = Astro.props;
   <div class={`container d-flex justify-content-between align-items-center px-0 ${includeBorder ? 'nav-with-border' : ''}`}>
     <div class="text-primary">
       <a href="/ishratalidesign/" class="text-decoration-none d-flex align-items-start">
-        <Image src={logo} alt="Logo" class="img-fluid pe-5" style="height: 40px;" />
+        <Image src={logo} alt="Logo" class="img-fluid pe-5 logo" />
       </a>
     </div>
     <nav class="d-flex gap-3">
@@ -22,6 +22,10 @@ const { includeBorder = true } = Astro.props;
 </header>
 
 <style>
+  .logo {
+    height: 4.375rem;
+    width: auto;
+  }
   header {
     background-color: #ECE8FC;
   }
