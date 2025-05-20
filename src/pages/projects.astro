@@ -72,6 +72,8 @@ import threecovers from '../assets/divergent/3covers-min.png';
     opacity: 0;
     transition: opacity 0.3s ease;
     text-align: center;
+    padding: 1rem;
+    gap: 2.188rem;
   }
 
   .project-link:hover .overlay {
@@ -80,15 +82,21 @@ import threecovers from '../assets/divergent/3covers-min.png';
 
   .project-link .title {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
     text-transform: uppercase;
-    word-break: break-word; /* Wrap to the next line */
+    word-break: break-word;
     margin-top: auto;
   }
 
   .project-link .footer {
     font-size: 1rem;
-    margin-top: auto;
-    padding-bottom: 2rem;
+    margin-bottom: auto;
+  }
+
+  .project-link {
+    transition: transform 0.3s ease;
+  }
+
+  .project-link:hover {
+    transform: translateY(-10px);
   }
 </style>
