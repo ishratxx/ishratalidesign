@@ -49,13 +49,15 @@ import { Image } from 'astro:assets';
 
       <!-- Image Section -->
       <div class="row mt-4 gy-4">
-        {images.map((imageRow: { col: any; src: any; alt: any; class: any; width?: any }) => (
+        {images.map((imageRow: { col: any; src: any; alt: any; class: any; width?: any, height?: any }) => (
           <div class={`col-${imageRow.col} text-center`}>
             <Image 
               src={imageRow.src} 
               alt={imageRow.alt} 
-              class={imageRow.class || "mx-auto" } 
-              style={{ width: imageRow.width ? imageRow.width : 'auto' }}/>
+              class={imageRow.class || "mx-auto" }
+              width={imageRow.width || "100%"}
+              height={imageRow.height || "auto"}
+              style={{ width: imageRow.width ? imageRow.width : 'auto'}}/>
           </div>
         ))}
       </div>
@@ -63,11 +65,3 @@ import { Image } from 'astro:assets';
   </main>
 </Layout>
 
-
-<!-- <style>
-    h1 {
-        font-family: "Spectral", serif;
-        font-weight: 700;
-        color: #191246;
-    }
-</style> -->

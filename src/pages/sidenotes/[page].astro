@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import sidenotesData from '../../data/sidenotes-data.js';
+
+export function getStaticPaths() {
+  return sidenotesData.map((_, i) => ({ params: { page: String(i + 1) } }));
+}
+
+const { page } = Astro.params;
+const pageNum = parseInt(page ?? "1");
+const totalPages = sidenotesData.length;
+const note = sidenotesData[pageNum - 1];
+---
+
+<Layout>
+  <main class="flex-grow py-5">
+    <div class="container text-center">
+      <h1 class="mb-4" style="font-family: 'Fraunces', serif; color: #a55b4b; font-size: 2.5rem; letter-spacing: 0.05em;" set:html={note.title}></h1>
+      <div class="sidenote-image-container d-flex justify-content-center mb-4">
+        <img src={note.image} alt={note.title} class="img-fluid mb-4 sidenote-image" />
+      </div>
+      <div class="sidenote-content-container mx-auto mb-5">
+        <p class="sidenote-content" set:html={note.description}></p>
+      </div>
+</Layout>
+
+<style>
+  .sidenote-image-container {
+    min-height: 320px;
+    max-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sidenote-image {
+    max-width: 320px;
+    max-height: 320px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .sidenote-content-container {
+    min-height: 252px; /* Adjust as needed for your typical content */
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sidenote-content {
+    color: #3e2c77;
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+</style>
+      <div class="d-flex justify-content-between align-items-center mt-5" style="max-width: 500px; margin: 0 auto;">
+        {pageNum > 1 ? (
+          <a href={`/ishratalidesign/sidenotes/${pageNum - 1}`} class="btn btn-link text-decoration-none" style="color: #a55b4b; font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: 0.08em;">BACK</a>
+        ) : (
+          <a href="/ishratalidesign/sidenotes" class="btn btn-link text-decoration-none" style="color: #a55b4b; font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: 0.08em;">BACK</a>
+        )}
+        {pageNum < totalPages ? (
+          <a href={`/ishratalidesign/sidenotes/${pageNum + 1}`} class="btn btn-link text-decoration-none" style="color: #3e2c77; font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: 0.08em;">NEXT</a>
+        ) : <span></span>}
+      </div>
+    </div>
+  </main>
+</Layout>

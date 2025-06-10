@@ -1,7 +1,6 @@
 ---
-// Import the template
+
 import ProjectTemplate from "../../components/ProjectTemplate.astro";
-import * as IMG from "../../assets/fimh/index.js";
 
 const projectDetails = [
   { label: "Project Type", value: "Book | Illustration" },
@@ -16,14 +15,14 @@ const rightColumn = [
 ];
 
 const images = [
-  { col: 12, src: IMG.FIMHcovermockup, alt: "Mockup 1" },
-  { col: 12, src: IMG.FIMHmockup3, alt: "Mockup 2" },
-  { col: 12, src: IMG.FIMHstickermockup, alt: "Mockup 4" },
-  { col: 12, src: IMG.FIMHmockup2, alt: "Mockup 3" },
-  { col: 12, src: IMG.Chapter1, alt: "winter months" },
-  { col: 12, src: IMG.Chapter2, alt: "longer route" },
-  { col: 12, src: IMG.Chapter3, alt: "lost sibling" },
-  { col: 12, src: IMG.Chapter4, alt: "perfect victim" },
+  { col: 12, src: "/ishratalidesign/images/fimh/cover.svg", alt: "Mockup 1", width: "100vw", height: "100%"},
+  { col: 12, src: "/ishratalidesign/images/fimh/mockup2.svg", alt: "Mockup 2", width: "100vw", height: "100%"},
+  { col: 12, src: "/ishratalidesign/images/fimh/mockup3.png", alt: "Mockup 2", width: "100vw", height: "100%"},
+  { col: 12, src: "/ishratalidesign/images/fimh/mockup1.svg", alt: "Mockup 4", width: "100vw", height: "100%"},
+  { col: 12, src: "/ishratalidesign/images/fimh/chapter1.gif", alt: "winter months", width: "100vw", height: "100%"},
+  { col: 12, src: "/ishratalidesign/images/fimh/chapter2.gif", alt: "longer route", width: "100vw", height: "100%"},
+  { col: 12, src: "/ishratalidesign/images/fimh/chapter3.gif", alt: "lost sibling", width: "100vw", height: "100%"},
+  { col: 12, src: "/ishratalidesign/images/fimh/chapter4.gif", alt: "perfect victim", width: "100vw", height: "100%"},
 ];
 ---
 

@@ -2,6 +2,7 @@
 title: "Side Notes"
 import Layout from '../layouts/Layout.astro';
 description: "A collection of personal projects and creative experiments."
+import sidenotesData from '../data/sidenotes-data.js'
 ---
 
 <Layout>
@@ -11,22 +12,106 @@ description: "A collection of personal projects and creative experiments."
       <div class="row">
         <div class="col-12 text-center mb-4">
           <h1 class="mb-4">Welcome to <span class="d-block">Side Notes</span></h1>
-          <p class="mx-auto w-50">
+          <p class="mx-auto side-notes-header">
             This is a little corner of my world where creative experiments, personal projects, and spontaneous ideas come out to play. These are the quieter moments and creative tangents that didn’t quite fit into the main chapters of my portfolio, but still mean a lot to me. Here you'll find personal illustrations, paintings, and experiments that happened on the side — sometimes as a warm-up, sometimes as a deep dive into something new. These pieces are less about the final product and more about process and following whatever sparked my curiosity that day or week. Think of it as a collection of visual thoughts in the margins. They’re the in-between moments, the creative stretches, the playful things that keep me inspired.
           </p>
         </div>
       </div>
       <div class="row">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-          <!-- Placeholder thumbnails -->
-          <div class="bg-gray-300 h-80"></div>
-          <div class="bg-gray-300 h-80"></div>
-          <div class="bg-gray-300 h-80"></div>
-          <div class="bg-gray-300 h-80"></div>
-          <div class="bg-gray-300 h-80"></div>
-          <div class="bg-gray-300 h-80"></div>
+        <div class="side-notes-grid mx-auto">
+            {sidenotesData.map((note, idx) => (
+              <a href={`/sidenotes/${idx + 1}`} class="project-link text-decoration-none">
+                <div class="relative h-80 overflow-hidden d-flex flex-column align-items-center justify-content-center">
+                  <div class="side-thumb-bg"></div>
+                  <div class="side-note-text">
+                    <h3 class="title" set:html={note.title}></h3>
+                    <p class="footer">{note.type}</p>
+                  </div>
+                  <div class="overlay"></div>
+                </div>
+              </a>
+            ))}
         </div>
       </div>
     </div>
   </main>
 </Layout>
+
+
+<style>
+  .side-notes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 900px;
+}
+@media (max-width: 991px) {
+  .side-notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.relative {
+  position: relative;
+}
+.h-80 {
+  height: 20rem;
+  min-height: 200px;
+}
+.side-thumb-bg {
+  width: 100%;
+  height: 100%;
+  background: #a55b4b;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+}
+.side-note-text {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-family: 'Fraunces', serif;
+  text-align: center;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(165,91,75,0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+.project-link:hover .overlay {
+  opacity: 1;
+}
+.project-link .title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  word-break: break-word;
+  margin-top: auto;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.project-link .footer {
+  font-size: 1rem;
+  margin-bottom: auto;
+  font-weight: 400;
+  opacity: 0.95;
+}
+.project-link {
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+  display: block;
+}
+.project-link:hover {
+  transform: translateY(-10px);
+}
+</style>
+

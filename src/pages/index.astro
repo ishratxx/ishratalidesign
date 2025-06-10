@@ -4,47 +4,40 @@ description: "Welcome to my portfolio! I'm a graphic designer passionate about b
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import polaroidpic from "../assets/polaroidpic.png";
-import SplashScreen from "../components/SplashScreen.astro";
+import welcome from "../assets/welcome.png";
+import portfolio from "../assets/portfolio.png";
 
 ---
 
 <Layout includeNavBottomBorder={false}>
-  <SplashScreen/>
-  <script is:inline src="/ishratalidesign/splash.js"></script>
 
-  <!-- Home Content -->
   <div
-    class="container-fluid px-0 d-flex align-items-center justify-content-center bg-3e2c77 cover-ctn fade-in"
+    class="container-fluid px-0 d-flex align-items-center justify-content-center cover-ctn"
   >
     <div class="row">
       <div class="col-12">
-        <h1 class="display-4 mb-4 text-center cover-color fraunces-bold-100">
-          Welcome <span class="d-block">to my</span>
-          <span class="d-block fraunces-bold-italic-120">portfolio</span>
-        </h1>
+        <Image src={welcome} alt="Welcome Image" class="img-fluid mx-auto" />
+        <Image src={portfolio} alt="Portfolio Image" class="img-fluid mx-auto" />
       </div>
     </div>
   </div>
 
-  <div class="container mt-4 fade-in">
+  <div class="container mt-4 body-content">
     <div class="row align-items-center t-sp">
       <!-- Left Column -->
-      <div class="col-md-6 text-start order-md-1 order-2">
-        <p class="lead fraunces-body">
-          I am Ishrat Ali, <span class="sp-t"
-            >a freelance graphic designer
-          </span>currently based in Detroit, Michigan. I thrive on bold colors,
-          expressive illustrations, and creating meaningful visuals that amplify
-          underrepresented voices. Whether it’s storytelling, representation, or
-          making a statement, I love pushing boundaries and making a lasting
-          impact with my creativity. Welcome to my world of design!
+      <div class="col-md-8 text-start order-md-1 order-2">
+        <p class="fraunces-header">
+          Hi, I’m Ishrat—a <span class="sp-t">freelance graphic designer </span> & <span class="sp-t">artist</span> based in Detroit, Michigan.
+        </p>
+        <p class="fraunces-body">
+          I thrive on bold colors, expressive illustrations, and creating meaningful visuals that amplify underrepresented voices. Whether it’s storytelling, representation, or making a statement, I love pushing boundaries and making a lasting impact with my creativity. Welcome to my world of design!
         </p>
         <a href="/ishratalidesign/about" class="btn btn-learnmore mt-4"
           >Learn more</a
         >
       </div>
       <!-- Right Column -->
-      <div class="col-md-6 text-center order-md-2 order-1">
+      <div class="col-md-4 text-center order-md-2 order-1">
         <Image
           src={polaroidpic}
           alt="Polaroid Picture"
@@ -56,9 +49,29 @@ import SplashScreen from "../components/SplashScreen.astro";
 </Layout>
 
 <style>
+  .body-content {
+    margin-bottom: 15vh;
+  }
   .polaroid-pic {
     height: 40vh;
     width: auto;
+  }
+  .fraunces-header {
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    color: #3e2c77; /* Match your theme */
+    font-size: 3rem;
+  }
+  .fraunces-body {
+    color: #3e2c77; /* Match your theme */
+    font-family: "Fraunces", serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    font-variation-settings:
+    "SOFT" 0,
+    "WONK" 0;
   }
   .splash-screen {
     position: fixed;
@@ -71,10 +84,11 @@ import SplashScreen from "../components/SplashScreen.astro";
     z-index: 9999; /* Ensure it appears above all other content */
   }
   .sp-t {
+    font-family: "Fraunces", serif;
     color: #a55b4b;
     font-weight: bold;
     font-style: italic;
-    font-size: 1.7rem;
+    font-size: 3rem;
   }
   .btn-learnmore {
     background-color: #3e2c77;
@@ -99,7 +113,7 @@ import SplashScreen from "../components/SplashScreen.astro";
     background: #231354;
   }
   .cover-ctn {
-    height: 50vh;
+    height: 60vh;
   }
 
   .fade-in {

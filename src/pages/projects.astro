@@ -1,20 +1,15 @@
 ---
 title: "Projects"
 import Layout from '../layouts/Layout.astro'
-import { Image } from 'astro:assets';
-import VLMockup1 from '../assets/vitality/VLMockup1.svg';
-import FIMHcovermockup from '../assets/fimh/FIMHcovermockup.svg';
-import jahiramockup1 from '../assets/jahira/JahiraMockup1.png';
-import threecovers from '../assets/divergent/3covers-min.png';
 ---
 
 <Layout>
   <main class="flex-grow p-10">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10" style="min-height: 90vh;">
       <!-- Placeholder thumbnails -->
       <a href={`/ishratalidesign/projects/vitality-living`} class="project-link">
         <div class="relative h-80 overflow-hidden">
-          <Image src={VLMockup1} alt="Vitality Living" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110" />
+          <img src="/ishratalidesign/images/vitality/VLM1-min.png" alt="Vitality Living" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110" />
           <div class="overlay">
             <h3 class="title">Vitality<br>Living</h3>
             <p class="footer">Branding/Layout Design</p>
@@ -24,7 +19,7 @@ import threecovers from '../assets/divergent/3covers-min.png';
 
       <a href={`/ishratalidesign/projects/jahira`} class="project-link">
         <div class="relative h-80 overflow-hidden">
-          <Image src={jahiramockup1} alt="Jahira" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110" />
+          <img src="/ishratalidesign/images/jahira/JahiraMockup1.png" alt="Jahira" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110" />
           <div class="overlay">
             <h3 class="title">Jahira</h3>
             <p class="footer">Branding/Layout Design</p>
@@ -34,7 +29,7 @@ import threecovers from '../assets/divergent/3covers-min.png';
 
       <a href={`/ishratalidesign/projects/divergent`} class="project-link">
         <div class="relative h-80 overflow-hidden">
-          <Image src={threecovers} alt="Divergent" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110" />
+          <img src="/ishratalidesign/images/divergent/divergent.png" alt="Divergent" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110 object-fit-contain" />
           <div class="overlay">
             <h3 class="title">Divergent</h3>
             <p class="footer">Branding/Layout Design</p>
@@ -44,7 +39,7 @@ import threecovers from '../assets/divergent/3covers-min.png';
 
       <a href={`/ishratalidesign/projects/flowers-in-my-heart`} class="project-link">
         <div class="relative h-80 overflow-hidden">
-          <Image src={FIMHcovermockup} alt="Flowers in My Heart" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110" />
+          <img src="/ishratalidesign/images/fimh/cover.svg" alt="Flowers in My Heart" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110" />
           <div class="overlay">
             <h3 class="title">Flowers in<br>My Heart</h3>
             <p class="footer">Branding/Layout Design</p>
