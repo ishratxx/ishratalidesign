@@ -4,15 +4,12 @@ const {
   title, 
   description, 
   projectDetails, 
-  leftColumn, 
   rightColumn, 
   images 
 } = Astro.props;
-import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 ---
 
-<Layout>
   <main class="flex-grow py-5">
     <div class="container">
       <!-- Title Section -->
@@ -63,5 +60,3 @@ import { Image } from 'astro:assets';
       </div>
     </div>
   </main>
-</Layout>
-

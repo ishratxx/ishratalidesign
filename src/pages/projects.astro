@@ -5,9 +5,9 @@ import Layout from '../layouts/Layout.astro'
 
 <Layout>
   <main class="flex-grow p-10">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10" style="min-height: 90vh;">
+    <div class="mx-auto projects-grid" style="min-height: 90vh;">
       <!-- Placeholder thumbnails -->
-      <a href={`/ishratalidesign/projects/vitality-living`} class="project-link">
+      <a href={`/ishratalidesign/projects/1`} class="project-link">
         <div class="relative h-80 overflow-hidden">
           <img src="/ishratalidesign/images/vitality/VLM1-min.png" alt="Vitality Living" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110" />
           <div class="overlay">
@@ -17,7 +17,7 @@ import Layout from '../layouts/Layout.astro'
         </div>
       </a>
 
-      <a href={`/ishratalidesign/projects/jahira`} class="project-link">
+      <a href={`/ishratalidesign/projects/2`} class="project-link">
         <div class="relative h-80 overflow-hidden">
           <img src="/ishratalidesign/images/jahira/JahiraMockup1.png" alt="Jahira" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110" />
           <div class="overlay">
@@ -27,7 +27,7 @@ import Layout from '../layouts/Layout.astro'
         </div>
       </a>
 
-      <a href={`/ishratalidesign/projects/divergent`} class="project-link">
+      <a href={`/ishratalidesign/projects/3`} class="project-link">
         <div class="relative h-80 overflow-hidden">
           <img src="/ishratalidesign/images/divergent/divergent.png" alt="Divergent" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110 object-fit-contain" />
           <div class="overlay">
@@ -37,7 +37,7 @@ import Layout from '../layouts/Layout.astro'
         </div>
       </a>
 
-      <a href={`/ishratalidesign/projects/flowers-in-my-heart`} class="project-link">
+      <a href={`/ishratalidesign/projects/4`} class="project-link">
         <div class="relative h-80 overflow-hidden">
           <img src="/ishratalidesign/images/fimh/cover.svg" alt="Flowers in My Heart" class="img-fluid w-100 h-100 object-cover transition-transform duration-300 hover:scale-110" />
           <div class="overlay">
@@ -52,14 +52,20 @@ import Layout from '../layouts/Layout.astro'
 </Layout>
 
 <style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    max-width: 900px;
+  }
   .project-link .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #c21c7b66; /* Opacity 40% */
-    color: #ece8fc; /* Lavender */
+    background-color: #4F1C51;
+    color: #FFFBF8; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,10 +75,13 @@ import Layout from '../layouts/Layout.astro'
     text-align: center;
     padding: 1rem;
     gap: 2.188rem;
+
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
   }
 
   .project-link:hover .overlay {
-    opacity: 1;
+    opacity: 0.7;
   }
 
   .project-link .title {

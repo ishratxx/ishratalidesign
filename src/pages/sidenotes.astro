@@ -22,7 +22,7 @@ import sidenotesData from '../data/sidenotes-data.js'
             {sidenotesData.map((note, idx) => (
               <a href={`/ishratalidesign/sidenotes/${idx + 1}`} class="project-link text-decoration-none">
                 <div class="relative h-80 overflow-hidden d-flex flex-column align-items-center justify-content-center">
-                  <div class="side-thumb-bg"></div>
+                  <img src={note.image} alt={note.title} class="img-fluid w-100 h-100 object-cover side-thumb-img" />
                   <div class="side-note-text">
                     <h3 class="title" set:html={note.title}></h3>
                     <p class="footer">{note.type}</p>
@@ -40,11 +40,11 @@ import sidenotesData from '../data/sidenotes-data.js'
 
 <style>
   .side-notes-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  max-width: 900px;
-}
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    max-width: 900px;
+  }
   @media (max-width: 991px) {
     .side-notes-grid {
       grid-template-columns: 1fr;
@@ -57,17 +57,18 @@ import sidenotesData from '../data/sidenotes-data.js'
     height: 20rem;
     min-height: 200px;
   }
-  .side-thumb-bg {
+  .side-thumb-img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: #a55b4b;
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    object-fit: cover;
     z-index: 1;
   }
   .side-note-text {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -77,6 +78,7 @@ import sidenotesData from '../data/sidenotes-data.js'
     width: 100%;
     font-family: 'Fraunces', serif;
     text-align: center;
+    pointer-events: none;
   }
   .overlay {
     position: absolute;
@@ -87,7 +89,7 @@ import sidenotesData from '../data/sidenotes-data.js'
     background-color: rgba(165,91,75,0.7);
     opacity: 0;
     transition: opacity 0.3s ease;
-    z-index: 1;
+    z-index: 2;
   }
   .project-link:hover .overlay {
     opacity: 1;
@@ -107,7 +109,7 @@ import sidenotesData from '../data/sidenotes-data.js'
     opacity: 0.95;
   }
   .project-link {
-    transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+    transition: transform 0.3s ease;
     display: block;
   }
   .project-link:hover {
