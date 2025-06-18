@@ -1,6 +1,7 @@
 // Data for Projects gallery pages
 export default [
     {
+    slug: "vitality-living",
     title: "Vitality Living",
     description: "Living",
     projectDetails: [
@@ -23,6 +24,7 @@ export default [
     ]
   },
 {
+    slug: "jahira",
     title: "Jahira",
     description: "Skincare",
     projectDetails: [
@@ -46,6 +48,7 @@ export default [
     ]
   },
   {
+    slug: "divergent",
     title: "Divergent",
     description: "Reimagined",
     projectDetails: [
@@ -67,6 +70,7 @@ export default [
     ]
   },
   {
+    slug: "flowers-in-my-heart",
     title: "Flowers in My Heart",
     description: "my heart",
     projectDetails: [

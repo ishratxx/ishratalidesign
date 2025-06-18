@@ -19,8 +19,8 @@ import sidenotesData from '../data/sidenotes-data.js'
       </div>
       <div class="row">
         <div class="side-notes-grid mx-auto">
-            {sidenotesData.map((note, idx) => (
-              <a href={`/ishratalidesign/sidenotes/${idx + 1}`} class="project-link text-decoration-none">
+            {sidenotesData.map((note) => (
+              <a href={`/ishratalidesign/sidenotes/${note.slug}`} class="project-link text-decoration-none">
                 <div class="relative h-80 overflow-hidden d-flex flex-column align-items-center justify-content-center">
                   <img src={note.image} alt={note.title} class="img-fluid w-100 h-100 object-cover side-thumb-img" />
                   <div class="side-note-text">

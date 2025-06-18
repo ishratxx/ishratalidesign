@@ -3,32 +3,37 @@ import Layout from '../../layouts/Layout.astro';
 import ProjectTemplate from '../../components/ProjectTemplate.astro';
 import projectsData from '../../data/projects-data.js';
 
+// Change param to slug
 export function getStaticPaths() {
-  return projectsData.map((_, i) => ({ params: { project: String(i + 1) } }));
+  return projectsData.map((project) => ({ params: { project: project.slug } }));
 }
 
-const { project } = Astro.params;
-const projectNum = parseInt(project ?? "1");
+const { project: slug } = Astro.params;
 const totalProjects = projectsData.length;
-const data = projectsData[projectNum - 1];
+const data = projectsData.find((p) => p.slug === slug);
+const projectIndex = projectsData.findIndex((p) => p.slug === slug);
 ---
 
 <Layout>
-  <ProjectTemplate
-    title={data.title}
-    description={data.description}
-    projectDetails={data.projectDetails}
-    rightColumn={data.rightColumn}
-    images={data.images}
-  />
+  {data ? (
+    <ProjectTemplate
+      title={data.title}
+      description={data.description}
+      projectDetails={data.projectDetails}
+      rightColumn={data.rightColumn}
+      images={data.images}
+    />
+  ) : (
+    <div style="text-align:center; margin:2rem 0; color:red;">Project not found.</div>
+  )}
   <div class="d-flex justify-content-between align-items-center mt-5" style="max-width: 500px; margin: 2rem auto 0 auto;">
-    {projectNum > 1 ? (
-      <a href={`/ishratalidesign/projects/${projectNum - 1}`} class="btn btn-link text-decoration-none" style="color: #a55b4b; font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: 0.08em;">BACK</a>
+    {projectIndex > 0 ? (
+      <a href={`/ishratalidesign/projects/${projectsData[projectIndex - 1].slug}`} class="btn btn-link text-decoration-none" style="color: #a55b4b; font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: 0.08em;">BACK</a>
     ) : (
       <a href="/ishratalidesign/projects" class="btn btn-link text-decoration-none" style="color: #a55b4b; font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: 0.08em;">BACK</a>
     )}
-    {projectNum < totalProjects ? (
-      <a href={`/ishratalidesign/projects/${projectNum + 1}`} class="btn btn-link text-decoration-none" style="color: #3e2c77; font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: 0.08em;">NEXT</a>
+    {projectIndex < totalProjects - 1 ? (
+      <a href={`/ishratalidesign/projects/${projectsData[projectIndex + 1].slug}`} class="btn btn-link text-decoration-none" style="color: #3e2c77; font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: 0.08em;">NEXT</a>
     ) : <span></span>}
   </div>
 </Layout>
