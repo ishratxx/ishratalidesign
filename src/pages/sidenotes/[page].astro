@@ -15,13 +15,19 @@ const pageIndex = sidenotesData.findIndex((n) => n.slug === slug);
 <Layout>
   <main class="flex-grow py-5">
     <div class="container text-center">
-      <h1 class="mb-4" style="font-family: 'Fraunces', serif; color: #a55b4b; font-size: 2.5rem; letter-spacing: 0.05em;" set:html={note.title}></h1>
-      <div class="sidenote-image-container d-flex justify-content-center mb-4">
-        <img src={note.image} alt={note.title} class="img-fluid mb-4 sidenote-image" />
-      </div>
-      <div class="sidenote-content-container mx-auto mb-5">
-        <p class="sidenote-content" set:html={note.description}></p>
-      </div>
+      {note ? (
+        <>
+          <h1 class="mb-4" style="font-family: 'Fraunces', serif; color: #a55b4b; font-size: 2.5rem; letter-spacing: 0.05em;" set:html={note.title}></h1>
+          <div class="sidenote-image-container d-flex justify-content-center mb-4">
+            <img src={note.image} alt={note.title} class="img-fluid mb-4 sidenote-image" />
+          </div>
+          <div class="sidenote-content-container mx-auto mb-5">
+            <p class="sidenote-content" set:html={note.description}></p>
+          </div>
+        </>
+      ) : (
+        <h2 class="text-danger">Sidenote not found.</h2>
+      )}
 </Layout>
 
 <style>
