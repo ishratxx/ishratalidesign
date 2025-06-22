@@ -70,7 +70,6 @@ import sidenotesData from '../data/sidenotes-data.js'
     position: relative;
     z-index: 3;
     color: #fff;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -79,6 +78,7 @@ import sidenotesData from '../data/sidenotes-data.js'
     font-family: 'Fraunces', serif;
     text-align: center;
     pointer-events: none;
+    display: none;
   }
   .overlay {
     position: absolute;
@@ -94,6 +94,9 @@ import sidenotesData from '../data/sidenotes-data.js'
   .project-link:hover .overlay {
     opacity: 1;
   }
+  .project-link:hover .side-note-text {
+  display: flex;
+}
   .project-link .title {
     font-size: 1.5rem;
     text-transform: uppercase;
