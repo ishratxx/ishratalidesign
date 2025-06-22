@@ -12,24 +12,26 @@ import sidenotesData from '../data/sidenotes-data.js'
       <div class="row">
         <div class="col-12 text-center mb-4">
           <h1 style="color: #a55b4b;" class="mb-4">Welcome to <span class="d-block">Side Notes</span></h1>
-          <p class="mx-auto side-notes-header w-50">
+          <p class="mx-auto side-notes-header">
             This is a little corner of my world where creative experiments, personal projects, and spontaneous ideas come out to play. These are the quieter moments and creative tangents that didn’t quite fit into the main chapters of my portfolio, but still mean a lot to me. Here you'll find personal illustrations, paintings, and experiments that happened on the side — sometimes as a warm-up, sometimes as a deep dive into something new. These pieces are less about the final product and more about process and following whatever sparked my curiosity that day or week. Think of it as a collection of visual thoughts in the margins. They’re the in-between moments, the creative stretches, the playful things that keep me inspired.
           </p>
         </div>
       </div>
       <div class="row">
-        <div class="side-notes-grid mx-auto">
+        <div class="side-notes-grid mx-auto row">
             {sidenotesData.map((note) => (
-              <a href={`/ishratalidesign/sidenotes/${note.slug}`} class="project-link text-decoration-none">
-                <div class="relative h-80 overflow-hidden d-flex flex-column align-items-center justify-content-center">
-                  <img src={note.image} alt={note.title} class="img-fluid w-100 h-100 object-cover side-thumb-img" />
-                  <div class="side-note-text">
-                    <h3 class="title" set:html={note.title}></h3>
-                    <p class="footer">{note.type}</p>
+              <div class="col-12 col-md-6 mb-4 d-flex">
+                <a href={`/ishratalidesign/sidenotes/${note.slug}`} class="project-link text-decoration-none w-100">
+                  <div class="relative h-80 overflow-hidden d-flex flex-column align-items-center justify-content-center">
+                    <img src={note.image} alt={note.title} class="img-fluid w-100 h-100 object-cover side-thumb-img" />
+                    <div class="side-note-text">
+                      <h3 class="title" set:html={note.title}></h3>
+                      <p class="footer">{note.type}</p>
+                    </div>
+                    <div class="overlay"></div>
                   </div>
-                  <div class="overlay"></div>
-                </div>
-              </a>
+                </a>
+              </div>
             ))}
         </div>
       </div>
@@ -40,10 +42,10 @@ import sidenotesData from '../data/sidenotes-data.js'
 
 <style>
   .side-notes-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
     max-width: 900px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   @media (max-width: 991px) {
     .side-notes-grid {
@@ -97,6 +99,26 @@ import sidenotesData from '../data/sidenotes-data.js'
   .project-link:hover .side-note-text {
   display: flex;
 }
+  @media (hover: none) and (pointer: coarse) {
+    .overlay {
+      opacity: 1 !important;
+    }
+    .side-note-text {
+      display: flex !important;
+    }
+  }
+  .side-notes-header {
+    width: 50%;
+    max-width: 700px;
+  }
+  @media (max-width: 600px) {
+    .side-notes-header {
+      width: 75vw;
+      max-width: 100vw;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
   .project-link .title {
     font-size: 1.5rem;
     text-transform: uppercase;
