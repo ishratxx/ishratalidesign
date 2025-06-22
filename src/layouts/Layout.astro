@@ -2,9 +2,6 @@
 import '../styles/global.css'
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-const { 
-  includeNavBottomBorder
-} = Astro.props;
 import { ClientRouter } from "astro:transitions";
 ---   
 <!doctype html>
@@ -25,7 +22,7 @@ import { ClientRouter } from "astro:transitions";
 		<title>Ishrat Ali Design</title>
 	</head>
 	<body>
-		<Navigation includeBorder={includeNavBottomBorder} />
+		<Navigation />
 		<slot />
 		<Footer/>
 	</body>
